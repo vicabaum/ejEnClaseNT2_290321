@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h4 v-if="!visualizar">{{ message }}</h4>
+        <h1 v-text="message" v-if="visualizar"></h1> 
+        <button v-on:click="alternar" type="button" class="btn btn-primary">Alternar</button>
+    </div>
+</body>
+
+</html>
+<script>
+    //Tarea: Investigar otras palabras reservadas de vue. Algunas: computed: created()
+
+    // La instancia de vue
+    var miVue = new Vue({
+        // Desde cual elemento del html va a tomar acción el vue.
+        el:'#app',
+        // Donde tendremos el modelo de lo que necesitemos
+        data:{
+            message: 'NT2',
+            visualizar: true
+        },
+        methods:{
+            alternar(){
+                this.message
+                this.visualizar = !this.visualizar
+            }
+        }
+    })
+</script>
+
